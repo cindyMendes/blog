@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts do
+     resources :comments
+   end
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   #ALL OF THIS CODE BELOW CAN BE REPLACED BY: resources :pages
@@ -10,5 +14,6 @@ Rails.application.routes.draw do
     # get '/pages/:id/edit', to: 'pages#edit', as: 'edit_page'
     # patch '/pages/:id', to: 'pages#update'
     # delete '/pages/:id', to: 'pages#destroy'
+
   resources :pages
 end
