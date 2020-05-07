@@ -1,15 +1,4 @@
 <!-- 05/03/2020 Lesson7 Putting it all together -->
-<!--
-<h1>Orders</h1>
-
-<#% @orders.each do |order| %>
-  <p><#%=  link_to order.product_name, order %></p>
-<#% end %>
-
-<#%= link_to "New Order", new_order_path %> -->
-
-<!-- ------------------------------- -->
-
 
 <h1>Orders</h1>
 
@@ -28,9 +17,8 @@
       <tr>
         <td><%= order.product_name %></td>
         <td><%= order.product_count %></td>
-        <!-- I'm not sure why the full_name method doesn't work here  -->
-        <!-- <td><#%= order.customer.full_name %></td> -->
-        <td><%= order.customer.to_s %></td>
+        <td><%= order.customer.full_name %></td>
+        <!-- <td><#%= order.customer.to_s %></td> -->
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -42,3 +30,19 @@
 <br>
 
 <%= link_to 'New Order', new_order_path %>
+
+
+
+
+
+
+<!-- ------------------------------- -->
+
+<!--
+<h1>Orders</h1>
+
+<#% @orders.each do |order| %>
+  <p><#%=  link_to order.product_name, order %></p>
+<#% end %>
+
+<#%= link_to "New Order", new_order_path %> -->
