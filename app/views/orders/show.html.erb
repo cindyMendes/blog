@@ -1,0 +1,26 @@
+<!-- 05/03/2020 Lesson7 Putting it all together -->
+
+
+<!-- <h1><#%= @order.product_name %></h1> -->
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product Name:</strong>
+  <%= @order.product_name %>
+</p>
+
+<p>
+  <strong>Product Count:</strong>
+  <%= @order.product_count %>
+</p>
+
+<p>
+  <strong>Customer Name:</strong>
+  <%= @order.customer.full_name %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %> |
+<%= link_to 'Delete', @order, method: :delete %>

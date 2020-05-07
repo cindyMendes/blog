@@ -17,4 +17,5 @@ Rails.application.routes.draw do
     # delete '/pages/:id', to: 'pages#destroy'
 
   resources :pages
+  resources :orders # 05/03/2020 Lesson7 Putting it all together (Add the routes for Order)
 end

@@ -1,24 +1,68 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:130px; text-align:left;">First Name:</th>
+      <th style="width:130px; text-align:left;">Last Name:</th>
+      <th style="width:170px; text-align:left;">Phone Number:</th>
+      <th style="width:200px; text-align:left;">Email:</th>
+      <th style="width:400px; text-align:left;">Orders:</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @customer.first_name %></td>
+      <td><%= @customer.last_name %></td>
+      <td><%= @customer.phone %></td>
+      <td><%= @customer.email %></td>
+      <td>
+        <% @customer.orders.each do |order| %>
+          <%= order.product_name %>:
+          <%= link_to 'Show Order', order %> |
+          <%= link_to 'Edit Order', edit_order_path(order) %> |
+          <%= link_to 'Destroy Order', order, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<br/>
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>
+
+
+
+
+
+<!-- <p>
   <strong>First name:</strong>
-  <%= @customer.first_name %>
+  <#%= @customer.first_name %>
 </p>
 
 <p>
   <strong>Last name:</strong>
-  <%= @customer.last_name %>
+  <#%= @customer.last_name %>
 </p>
 
 <p>
   <strong>Phone:</strong>
-  <%= @customer.phone %>
+  <#%= @customer.phone %>
 </p>
 
 <p>
   <strong>Email:</strong>
-  <%= @customer.email %>
+  <#%= @customer.email %>
 </p>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<p>
+  <strong>Orders:</strong>
+  <#% @customer.orders.each do |order| %>
+    <#%= order.product_name %>
+  <#% end %>
+</p> -->
